@@ -1,2 +1,12 @@
-# ansible-role-dnsmasq
-Ansible role to configure DNS server based on dnsmasq
+Ansible Role: dnsmasq
+======================
+
+Installs dnsmasq for DNS caching purposes (no DHCP).
+
+Example Playbook
+----------------
+
+
+    - hosts: servers
+      roles:
+         - dnsmasq

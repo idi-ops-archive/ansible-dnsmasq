@@ -1,0 +1,21 @@
+---
+
+- name: Install required packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items: '{{ dnsmasq_packages }}'
+
+- name: Configure dnsmasq
+  copy:
+    src: dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+    backup: no
+  notify:
+    - restart dnsmasq
+
+- name: Enable dnsmasq
+  service:
+    name: dnsmasq
+    enabled: yes
+    state: started

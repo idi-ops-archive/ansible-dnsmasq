@@ -1,0 +1,5 @@
+---
+
+dnsmasq_packages:
+  - dnsmasq
+  - bind-utils
